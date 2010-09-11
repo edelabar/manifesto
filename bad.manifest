@@ -1,0 +1,33 @@
+CACHE MANIFEST # Comments are ok here.
+# This is an invalid manifest file, a number of referenced files do not exist.
+  # Comments with whitespace in front of them are OK too.
+
+assets/test.css
+ assets/test.html
+  assets2/test.js
+assets/test.js
+
+ NETWORK: # These files require network access
+ http://www.ericdelabar.com/examples/manifest-bookmarklet/assets/test.gif # Checking a comment here...
+ http://www.google.com/
+
+CACHE:
+assets/test.png
+
+FALLBACK:
+assets/test.png assets/test2.png # This is ok.
+assets/test.png assets2/test2.png
+/ assets/test.html
+*.jpg assets/test.jpg
+* *
+
+CACHE:
+assets/test.jpg
+/examples/manifest-bookmarklet/assets2/test.gif
+assets/test.gif
+* 
+
+NETWORK:
+ *
+
+oops I forgot the hash in the front of this comment...
