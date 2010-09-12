@@ -9,7 +9,7 @@ assets/test.html
 assets/test.js # Comments are OK out here.
 
 NETWORK: # Comments are OK here too.
-http://www.ericdelabar.com/examples/manifest-bookmarklet/assets/test.gif
+http://manifesto.ericdelabar.com/tests/assets/test.gif
 http://www.google.com/
 
  CACHE:
@@ -21,7 +21,7 @@ assets/test.png assets/test2.png # Comment ok here?
 
 CACHE:
 assets/test.jpg
-/examples/manifest-bookmarklet/assets/test.gif
+/tests/assets/test.gif
 assets/test.gif
 
 NETWORK:
