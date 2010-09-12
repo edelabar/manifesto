@@ -1,9 +1,9 @@
 var jQuery = jQuery;
 var $ = $;
-var console = console;
-if( !console ) {
-	console = {};
-	console.log = function( msg ){};
+var c = c;
+if( !c ) {
+	c = {};
+	c.log = function( msg ){};
 }
 var secure = 'https:' == document.location.protocol;
 css=document.createElement('LINK');
@@ -88,7 +88,7 @@ var intervalFn = function() {
 								return s + ":";
 							}
 						}( padLength );
-						console.log( "Pad Length: " + padLength );
+						c.log( "Pad Length: " + padLength );
 						if( lines[0].match(/^CACHE MANIFEST\s*(#.*)?/) ) { // 'CACHE MANIFEST' CANNOT have whitespace before it.
 							display.append( "<tr><th>" + padFn( 0 ) + '</th><td class="keyword">' + parseComments( lines[0] ) + "</td></tr>" );
 							if( lines.length > 1 ) {
@@ -106,7 +106,7 @@ var intervalFn = function() {
 												if( lines[i].match(/^\s*(\S*)\s*(#.*)?$/) ) { // Whitespace before OK
 													s = RegExp.$1
 													if( mode == 'CACHE' && s.substr(0,1) == '*' ) {
-														console.log( "Line["+(i+1)+"]: Invalid syntax: " + lines[i] );
+														c.log( "Line["+(i+1)+"]: Invalid syntax: " + lines[i] );
 														currentLine.find("td").append('<span class="error">Invalid Syntax!</span>').addClass("error");
 														continue;
 													} else if( mode == 'NETWORK' && s.substr(0,1) == '*' ) {
@@ -114,7 +114,7 @@ var intervalFn = function() {
 														continue;
 													}
 												} else {
-													console.log( "Line["+(i+1)+"]: Invalid syntax: " + lines[i] );
+													c.log( "Line["+(i+1)+"]: Invalid syntax: " + lines[i] );
 													currentLine.find("td").append('<span class="error">Invalid Syntax!</span>').addClass("error");
 													continue;
 												}
@@ -122,7 +122,7 @@ var intervalFn = function() {
 												if( lines[i].match(/^\s*\S*\s*(\S*)\s*(#.*)?$/) && RegExp.$1.substr(0,1) != '*' ) { // Whitespace before OK
 													s = RegExp.$1
 												} else {
-													console.log( "Line["+(i+1)+"]: Invalid syntax: " + lines[i] );
+													c.log( "Line["+(i+1)+"]: Invalid syntax: " + lines[i] );
 													currentLine.find("td").append('<span class="error">Invalid Syntax!</span>').addClass("error");
 													continue;
 												}
@@ -132,7 +132,7 @@ var intervalFn = function() {
 												window.location.href.match(/^\s*https?:\/\/([^\/]+)\//); // Whitespace before OK
 												var root = RegExp.$1;
 												if( link != root ) {
-													console.log( "Line["+(i+1)+"]: Ignoring cross-site file (verify manually): " + s );
+													c.log( "Line["+(i+1)+"]: Ignoring cross-site file (verify manually): " + s );
 													currentLine.find("td").append('<span class="warn">Off-site file, verify manually.</span>').addClass("warn");
 													continue;
 												}
@@ -142,10 +142,10 @@ var intervalFn = function() {
 												cache: false,
 												dataType: 'text',
 												complete: function(url, line){ 
-													console.log( "Line["+(line+1)+"]: Attempting to GET url: " + url );
+													c.log( "Line["+(line+1)+"]: Attempting to GET url: " + url );
 													return function( XHR, status ) {
 														if (XHR.status != 200) {
-															console.log("Line["+(line+1)+"]: Error " + XHR.status + " retrieving URL: " + url );
+															c.log("Line["+(line+1)+"]: Error " + XHR.status + " retrieving URL: " + url );
 															var cl = $( "div#formatted tbody" ).children().eq(line);
 															cl.find("td").append('<span class="error">'+XHR.status+' ' + ( statusCodes[XHR.status] ? statusCodes[XHR.status] : ""  ) + '</span>').addClass("error");
 														}

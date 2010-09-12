@@ -17,5 +17,3 @@ AddCharset utf-8 .html .css .js .xml .json .rss
 
 RewriteEngine On
 RewriteRule good.manifest good.manifest.php
-RewriteRule new.html new.php
-RewriteRule random\.(.+).manifest good.manifest.php

@@ -1,6 +1,5 @@
 <?php header( 'Content-type: text/cache-manifest' ); ?>CACHE MANIFEST # Comments are OK here
-# Generated: <?php echo date( 'o-m-d' ); ?>T<?php echo date( 'H:i:s.u' ); echo "\n";?>
-# Random: <?php echo rand(); echo "\n"; ?>
+# Generated: <?php echo date( 'o-m-d' ); ?>T<?php echo date( 'H:i' ); echo "\n";?>
  # Spaces before comments shouldn't matter
 
 assets/test.css
