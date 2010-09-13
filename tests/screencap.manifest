@@ -1,0 +1,28 @@
+CACHE MANIFEST # Comments are ok
+
+assets/test.css
+ assets/test.html
+  assets2/test.js
+assets/test.js
+
+ NETWORK: # Require network access
+ http://www.google.com/
+
+CACHE:
+assets/test.png
+
+FALLBACK:
+assets/test.png assets/test2.png 
+assets/test.jpg assets2/test2.jpg
+/ assets/test.html # This is ok.
+*.jpg assets/test.jpg
+* *
+
+CACHE:
+assets/test.jpg
+/tests/assets2/test.gif
+assets/test.gif
+* 
+
+NETWORK:
+ *

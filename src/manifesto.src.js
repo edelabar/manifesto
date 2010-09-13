@@ -1,5 +1,3 @@
-var jQuery = jQuery;
-var $ = $;
 var c = console;
 if( !c ) {
 	c = {};
@@ -12,7 +10,7 @@ css.type='text/css';
 css.href='http://manifesto.ericdelabar.com/manifesto.css';
 document.getElementsByTagName('head')[0].appendChild(css);
 
-if( !jQuery ) {
+if( !window.jQuery ) {
 	jq=document.createElement('SCRIPT');
   jq.type='text/javascript';
   jq.src='http'+( secure ? 's' : '')+'://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js';
@@ -20,8 +18,8 @@ if( !jQuery ) {
 }
 var interval;
 var intervalFn = function() {
-	if( jQuery ) {
-		if( jQuery && $ && jQuery != $ ) {
+	if( window.jQuery ) {
+		if( jQuery && window.$ && jQuery != $ ) {
 			jQuery.noConflict();
 		}
 		jQuery(document).ready(function($){

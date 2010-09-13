@@ -4,52 +4,91 @@
 		<meta charset="utf-8">
 		
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+		<link href='http://fonts.googleapis.com/css?family=Neuton|Cantarell:regular,italic,bold' rel='stylesheet' type='text/css'>
+		
 
 		<title>Manifesto - An HTML5 Offline Application Cache verification bookmarklet</title>
 		<meta name="description" content="Manifesto is a bookmarklet for quickly verifying that an HTML5 manifest file is valid and working.">
 		<meta name="author" content="Eric DeLabar">
+  	
+  	<!-- Place favicon.ico and apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  	<link rel="stylesheet" href="css/style.css?v=1">
+  	<link rel="stylesheet" media="handheld" href="css/handheld.css?v=1">
+  	<script src="js/modernizr-1.5.min.js"></script>
 		
-	</head>
+	</head>	
+	<!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
+	<!--[if IE 7 ]>    <body class="ie7"> <![endif]-->
+	<!--[if IE 8 ]>    <body class="ie8"> <![endif]-->
+	<!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
+	<!--[if (gt IE 9)|!(IE)]><!-->
 	<body>
-		<h1>Manifesto is an HTML5 Offline Application Cache verification bookmarklet</h1>
-		<p>Manifesto provides a quick and easy way to make sure your HTML5 manifest file is valid and working.</p>
-		<p>One of the hardest parts of the Offline Application Cache is that when it doesn't work, it fails silently, and you may not even realize it has.  This bookmarklet provides a simple way to make sure your page is using the manifest, and if it's not, it helps you diagnose the problems.</p>
-		<p>Sound helpful?</p>
-		<h2>Install the Bookmarklet</h2>
-		<p><a href="javascript:(
-			function(){
-				if( window.applicationCache ) { 
-					if( window.applicationCache.status == window.applicationCache.UNCACHED ) {
-  					cmc=document.createElement('SCRIPT');
-  					cmc.type='text/javascript';
-  					cmc.src='http://manifesto.ericdelabar.com/manifesto.js?x='+(Math.random());
-  					document.getElementsByTagName('head')[0].appendChild(cmc);
-					} else { 
-						alert( 'Manifest file is valid.' ); 
-					}
-				} else { 
-					alert( 'This browser does not support HTML5 Offline Application Cache.' ); 
-				}
-			}
-		)();">Manifesto</a></p>
-		<h2>Try it Out</h2>
-		<ul>
-			<li><a href="tests/good.html">Good Manifest</a></li>
-			<li><a href="tests/empty.html">Empty Manifest</a></li>
-			<li><a href="tests/invalid.html">Invalid Manifest</a></li>
-			<li><a href="tests/bad.html">Bad Manifest contents</a></li>
-		</ul>
-		<h2>Enjoy!</h2>
-		<script type="text/javascript">	
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-18491841-1']);
-		  _gaq.push(['_trackPageview']);
+		<!--<![endif]-->
 		
-		  (function() {
-		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
-		</script>
+		<div id="container">
+	    <header>
+				<h1>Manifesto</h1>
+				<h2>is an HTML5 Offline Application Cache verification bookmarklet</h2>
+	    </header>
+	    
+	    <article id="main">
+	
+				<img src="images/screenshot.png" alt="Screenshot of manifesto" class="screenshot"/>
+				<p>Manifesto provides a quick and easy way to make sure your HTML5 manifest file is valid and working.</p>
+				<p>One of the hardest parts of the Offline Application Cache is that when it doesn't work, it fails silently, and you may not even realize it has.  This bookmarklet provides a simple way to make sure your page is using the manifest, and if it's not, it helps you diagnose the problems.</p>
+				<p>Sound helpful?</p>
+				<h3>Install the Bookmarklet</h3>
+				<p><a href="javascript:(
+					function(){
+						if( window.applicationCache ) { 
+							if( window.applicationCache.status == window.applicationCache.UNCACHED ) {
+		  					cmc=document.createElement('SCRIPT');
+		  					cmc.type='text/javascript';
+		  					cmc.src='http://manifesto.ericdelabar.com/manifesto.js?x='+(Math.random());
+		  					document.getElementsByTagName('head')[0].appendChild(cmc);
+							} else { 
+								alert( 'Manifest file is valid.' ); 
+							}
+						} else { 
+							alert( 'This browser does not support HTML5 Offline Application Cache.' ); 
+						}
+					}
+				)();">Manifesto</a></p>
+				<h3>Try it Out</h3>
+				<ul>
+					<li><a href="tests/good.html">Good Manifest</a></li>
+					<li><a href="tests/empty.html">Empty Manifest</a></li>
+					<li><a href="tests/invalid.html">Invalid Manifest</a></li>
+					<li><a href="tests/bad.html">Bad Manifest contents</a></li>
+				</ul>
+				<h3>Enjoy!</h3>	
+	
+	    </article>
+	    
+	    <footer>
+	
+	    </footer>
+  	</div> <!-- end of #container -->
+
+	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	  <script>!window.jQuery && document.write('<script src="js/jquery-1.4.2.min.js"><\/script>')</script>
+	  <script src="js/plugins.js?v=1"></script>
+	  <script src="js/script.js?v=1"></script>
+	
+	  <!--[if lt IE 7 ]>
+	    <script src="js/dd_belatedpng.js?v=1"></script>
+	  <![endif]-->
+
+		<script>
+	   var _gaq = [['_setAccount', 'UA-18491841-1'], ['_trackPageview']]; 
+	   (function(d, t) {
+	    var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+	    g.async = true; g.src = '//www.google-analytics.com/ga.js'; s.parentNode.insertBefore(g, s);
+	   })(document, 'script');
+	  </script>
 	</body>
 </html>
