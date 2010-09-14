@@ -14,12 +14,14 @@
   	
   	<!-- Place favicon.ico and apple-touch-icon.png in the root of your domain and delete these references -->
 		<link rel="shortcut icon" href="/favicon.ico">
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   	<link rel="stylesheet" href="css/style.css?v=1">
   	<link rel="stylesheet" media="handheld" href="css/handheld.css?v=1">
   	<script src="js/modernizr-1.5.min.js"></script>
 		
+		<link rel="alternate" href="https://code.google.com/feeds/p/manifesto/updates/basic" title="Project Updated (Atom)" type="application/atom+xml" />
+		<link rel="alternate" href="https://code.google.com/feeds/p/manifesto/issueupdates/basic" title="Issue Updates (Atom)" type="application/atom+xml" />
+		<link rel="alternate" href="https://code.google.com/feeds/p/manifesto/hgchanges/basic" title="Mercurial Commits (Atom)" type="application/atom+xml" />
 	</head>	
 	<!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
 	<!--[if IE 7 ]>    <body class="ie7"> <![endif]-->
@@ -37,9 +39,10 @@
 	    
 	    <article id="main">
 	
-				<img src="images/screenshot.png" alt="Screenshot of manifesto" class="screenshot"/>
-				<p>Manifesto provides a quick and easy way to make sure your HTML5 manifest file is valid and working.</p>
-				<p>One of the hardest parts of the Offline Application Cache is that when it doesn't work, it fails silently, and you may not even realize it has.  This bookmarklet provides a simple way to make sure your page is using the manifest, and if it's not, it helps you diagnose the problems.</p>
+				<img src="images/screenshot-whole.png" alt="Screenshot of manifesto" class="screenshot"/>
+				<p>Manifesto provides a quick and easy way to make sure your HTML5 manifest file is valid and working on your page.</p>
+				<p>One of the hardest parts of the Offline Application Cache is that when it doesn't work, it fails silently and you may not even realize it.  This bookmarklet provides a simple way to make sure your page is using the manifest, and if it's not, it tries to help you diagnose the problem.</p>
+				<p>Manifesto identifies files that can't be accessed, manifest file syntax errors, duplicate listings, and warns about common pain points.</p>
 				<p>Sound helpful?</p>
 				<h3>Install the Bookmarklet</h3>
 				<p><a href="javascript:(
@@ -57,21 +60,46 @@
 							alert( 'This browser does not support HTML5 Offline Application Cache.' ); 
 						}
 					}
-				)();">Manifesto</a></p>
+				)();" class="bookmarklet"><span>Manifesto</span></a><span class="instructions">☚ Drag this to your bookmarks bar.</span></p>
 				<h3>Try it Out</h3>
 				<ul>
-					<li><a href="tests/good.html">Good Manifest</a></li>
-					<li><a href="tests/empty.html">Empty Manifest</a></li>
-					<li><a href="tests/invalid.html">Invalid Manifest</a></li>
-					<li><a href="tests/bad.html">Bad Manifest contents</a></li>
+					<li>Test a <a href="tests/good.html">Working Manifest</a> file.</li>
+					<li>Test an <a href="tests/empty.html">Empty Manifest</a> file.</li>
+					<li>Test an <a href="tests/invalid.html">Invalid Manifest</a> file ("CACHE MANIFEST" is not the first line).</li>
+					<li>Test a <a href="tests/bad.html">Bad Manifest</a> file (multiple errors with contents).</li>
 				</ul>
-				<h3>Enjoy!</h3>	
-	
+				<h3>Contribute</h3>	
+				
+				<p>Manifesto is Open Source and released under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License v3</a>.
+				<a href="https://code.google.com/p/manifesto/source/checkout">Clone Manifesto</a> on <a href="https://code.google.com/p/manifesto">Google Code</a> if you're interested in contributing.</p>
+				
+				<h3>Enjoy!</h3>
+				
+				<aside>
+					<h4>Tested on:</h4>
+					<ul class="platforms">
+						<li><a href="http://www.apple.com/safari/download/">Safari</a><span class="version">5.0.2 (Mac)</span></li>
+						<li><a href="http://www.mozilla.com/en-US/firefox/firefox.html">Firefox</a><span class="version">3.6.3 (Mac)</span></li>
+						<li><a href="http://www.google.com/chrome/">Chrome</a><span class="version">6.0.472.55 (Mac)</span></li>
+						<li><a href="http://www.opera.com/">Opera</a><span class="version">10.62 (Mac)</span></li>
+						<li><a href="http://ie.microsoft.com/testdrive/">Internet Explorer</a><span class="version">9 Preview (Win)</span></li>
+						<li><a href="http://www.apple.com/iphone/ios4/">iOS</a><span class="version">4.1 (iPhone)<br/>3.2 (iPad)</span></li>
+					</ul>
+					<h4>Works with:</h4>
+					<ul class="platforms">
+						<li><a href="http://www.jquery.org/">jQuery</a></li>
+						<li><a href="http://www.prototypejs.org/">Prototype</a></li>
+						<li><a href="http://www.jqtouch.com/">jQTouch</a></li>
+						<li><a href="http://www.google.com/chromeframe">Google Chrome Frame</a></li>
+					</ul>
+					<p>Need support for a browsing platform or JavaScript Framework? <a href="https://code.google.com/p/manifesto/issues/list">Open an issue</a> on the <a href="https://code.google.com/p/manifesto">Manifesto Google Code project page</a>.</p>
+				</aside>
 	    </article>
 	    
 	    <footer>
-	
-	    </footer>
+				<p>Do you like <strong>Manifesto</strong> for mobile development?  Try <a href="http://snoopy.allmarkedup.com/">Snoopy</a> a bookmarklet by <a href="http://twitter.com/allmarkedup">Mark Perkins</a> that lets you view-source in Mobile Webkit.</p>
+    		<div><p><strong>Manifesto</strong> is designed and developed by <a href="http://www.ericdelabar.com/">Eric DeLabar</a> (<a href="http://twitter.com/edelabar">@edelabar</a>). Updates and other notification through <a href="https://code.google.com/p/manifesto/feeds">Google Code</a>.</p></div>
+			</footer>
   	</div> <!-- end of #container -->
 
 	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
