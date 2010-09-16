@@ -185,6 +185,29 @@ aside h4 {
 aside ul {
 	margin: 0;
 	width: 960px;
+	text-align: center;
+}
+
+aside ul a {
+	position: relative;
+	display: inline-block;
+}
+aside ul a:nth-child(1) {
+	display: block;
+}
+
+aside ul.platforms a:first-child {
+	height: 72px;
+}
+aside ul img {
+	float: none;
+}
+aside ul.platforms img {
+	width: 74px;
+}
+
+aside ul.frameworks a:first-child {
+	height: 54px;
 }
 
 aside li {
@@ -202,6 +225,7 @@ aside p, footer p {
 	margin: 0;
 	padding-bottom: 18px;
 	clear: both;
+	text-align: center;
 }
 
 footer {
@@ -215,7 +239,6 @@ footer p {
 	border-top-right-radius: 10px;
 	padding: 18px 10px;
 	font-weight: bold;
-	text-align: center;
 	background-color: #444;
 	color: #eee;
 }
