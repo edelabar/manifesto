@@ -112,6 +112,32 @@ body {
 	font-family: 'Cantarell', sans-serif;
 }
 
+#noSupport {
+	display: none;
+	width: 960px;
+	margin: 18px auto 0;
+}
+
+#noSupport h1 {
+	line-height: 36px;
+	font-size: 20px;
+	margin-bottom: 18px;
+	text-align: center;
+}
+
+#noSupport p {
+	line-height: 18px;
+	margin-bottom: 18px;
+}
+
+.no-applicationcache #noSupport {
+	display: block;
+}
+
+.no-applicationcache #container {
+	display: none;
+}
+
 #container {
 	width: 960px;
 	margin: 0 auto;
