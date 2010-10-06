@@ -115,6 +115,7 @@ RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
+RewriteRule ^index.html$ /index.php [L]
 
 # without -MultiViews, Apache will give a 404 for a rewrite if a folder of the same name does not exist (e.g. “/blog/hello”)
 #   webmasterworld.com/apache/3808792.htm
@@ -126,7 +127,7 @@ Options -Indexes
 
 # custom 404 page
 ErrorDocument 404 /404.html
-
+DirectoryIndex index.php
 
 
 # use utf-8 encoding for anything served text/plain or text/html
